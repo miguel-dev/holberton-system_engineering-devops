@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#Displays Holberton School 10 times, but for the 9th iteration Holberton School and then Hi on a new line.
+
+i=0
+
+while [ $i -lt 10 ]
+do
+	echo "Holberton School"
+	i=$(( i + 1 ))
+done
