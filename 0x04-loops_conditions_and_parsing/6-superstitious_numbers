@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 #Displays numbers from 1 to 20. bad luck from China for 4th iteration. bad luck from Japan for 9th. bad luck from Italy for 17th.
 
 i=1
