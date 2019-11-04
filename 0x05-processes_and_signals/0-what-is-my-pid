@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Displays it's own PID.
+
+ps ax | pgrep -n -f "./0-what-is-my-pid"
