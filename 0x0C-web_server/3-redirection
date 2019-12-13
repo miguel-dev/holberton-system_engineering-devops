@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Installs nginx web server.
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+sed -i "42i /rewrite redirect_me google.com;" /etc/nginx/sites-enabled/default
+sudo service nginx start
