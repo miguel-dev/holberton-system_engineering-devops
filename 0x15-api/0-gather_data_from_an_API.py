@@ -2,8 +2,8 @@
 """Scripts using this REST API: https://jsonplaceholder.typicode.com.
 Accepts an employeeID returns information about his/her TODO list progress"""
 
-import requests
 import json
+import requests
 import sys
 list_users = requests.get('https://jsonplaceholder.typicode.com/users').json()
 list_tasks = requests.get('https://jsonplaceholder.typicode.com/todos').json()
@@ -21,4 +21,4 @@ for task in list_tasks:
         total += 1
 print(" tasks({:d}/{:d}):".format(done, total))
 for task in tasks:
-    print("\t{}".format(task))
+    print("\t {}".format(task))
