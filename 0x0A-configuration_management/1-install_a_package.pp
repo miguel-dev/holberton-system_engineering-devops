@@ -1,6 +1,5 @@
 # Install a package.
-class puppet-lint {
-	package { 'puppet-lint':
-		ensure => "installed",
-	}
+package { 'puppet-lint':
+  ensure   => '2.1.1',
+  provider => 'gem',
 }
