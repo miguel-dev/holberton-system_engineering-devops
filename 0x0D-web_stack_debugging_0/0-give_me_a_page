@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-#Reloads nginx
-service apache2 restart
+#Reloads Apache 2
+sudo service apache2 restart
