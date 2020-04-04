@@ -2,5 +2,5 @@
 #Installs Load Balancer
 sudo apt-get update
 sudo apt-get install haproxy
-sudo sed -i """35a listen firstbalance\nbind *:80\nbalance roundrobin\nmode http\nserver gc-784-web-01-1585102586 34.74.33.57:80 check\nserver 784-web-02 54.87.47.12:80 check""" /etc/haproxy/haproxy.cfg
+sudo sed -i """35a listen firstbalance\nbind *:80\nbalance roundrobin\nmode http\nserver 784-web-01 34.74.33.57:80 check\nserver 784-web-02 54.87.47.12:80 check""" /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
