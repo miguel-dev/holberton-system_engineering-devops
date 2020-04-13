@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #Displays information about subdomains.
-# shellcheck disable = SC2086
 
 
 subdomain_info() {
@@ -8,7 +7,7 @@ subdomain_info() {
 	domain=".miguelcortes.tech"
 	fulldomain=$subdomain$domain
 	echo -n "The subdomain $subdomain is a "
-	dig $fulldomain | awk '/ANSWER SECTION:/ {getline;print;}' | awk '{print $4 " record and points to " $5}'
+	dig "$fulldomain" | awk '/ANSWER SECTION:/ {getline;print;}' | awk '{print $4 " record and points to " $5}'
 }
 
 if [ -z "$2" ]; then
