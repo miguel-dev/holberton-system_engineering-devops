@@ -3,18 +3,24 @@
 
 
 subdomain_info() {
-	subdomain=$1
-	domain=".miguelcortes.tech"
-	fulldomain=$subdomain$domain
+	subdomain=$2
+	fulldomain=""
+	if [[ -n "$subdomain" ]]; then
+		dot="."
+		domain=$dot$1
+		fulldomain=$subdomain$domain
+	else
+		fulldomain=$1
+	fi
 	echo -n "The subdomain $subdomain is a "
 	dig "$fulldomain" | awk '/ANSWER SECTION:/ {getline;print;}' | awk '{print $4 " record and points to " $5}'
 }
 
 if [ -z "$2" ]; then
-	subdomain_info "www"
-	subdomain_info "lb-01"
-	subdomain_info "web-01"
-	subdomain_info "web-02"
+	subdomain_info "$1" "www"
+	subdomain_info "$1" "lb-01"
+	subdomain_info "$1" "web-01"
+	subdomain_info "$1" "web-02"
 else
-	subdomain_info "$2"
+	subdomain_info "$1" "$2"
 fi
