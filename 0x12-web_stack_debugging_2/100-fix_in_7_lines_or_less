@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#nginx runs as nginx user and nginx listens on all active IPS on port 8080.
+pkill -f apache2
+chown nginx:nginx /etc/nginx/nginx.conf
+chmod 700 /etc/nginx/nginx.conf
+sed -i -e 's/80/8080/' -e 's/ ipv6only=on//' /etc/nginx/sites-available/default
+sudo -u nginx service nginx start
