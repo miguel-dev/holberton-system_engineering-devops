@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#nginx runs as nginx user. Nginx listens on all active IPS on port 8080.
+pkill -f apache2
+su - nginx
+sudo sed -i 's/80/8080/' /etc/nginx/sites-enabled/default
+sudo service nginx reload
