@@ -21,7 +21,7 @@ if __name__ == "__main__":
                                 quoting=csv.QUOTE_ALL)
 
         for task in list_tasks:
-            writer.writerow({"USER_ID": sys.argv[1],
+            writer.writerow({"USER_ID": task.get("userId"),
                              "USERNAME": dict_user.get("username"),
                              "TASK_COMPLETED_STATUS": task.get("completed"),
                              "TASK_TITLE": task.get("title")})
