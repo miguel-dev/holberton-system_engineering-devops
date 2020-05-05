@@ -14,12 +14,12 @@ if __name__ == "__main__":
     num_total = 0
     titles = []
     for task in list_tasks:
-        if task["completed"] is True:
+        if task.get("completed") is True:
             num_done += 1
-            titles.append(task["title"])
+            titles.append(task.get("title"))
         num_total += 1
 
     string = 'Employee {} is done with tasks({:d}/{:d}):'
-    print(string.format(dict_user["name"], num_done, num_total))
+    print(string.format(dict_user.get("name"), num_done, num_total))
     for title in titles:
-        print("\t{}".format(title))
+        print("\t {}".format(title))
