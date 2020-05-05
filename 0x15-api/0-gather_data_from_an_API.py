@@ -4,10 +4,10 @@ import requests
 import sys
 if __name__ == "__main__":
     url_base = 'https://jsonplaceholder.typicode.com/'
-    user = requests.get(url_base + 'users/{}'.format(sys.argv[1]))
+    user = requests.get('{}users/{}'.format(url_base, sys.argv[1]))
     dict_user = user.json()
 
-    tasks = requests.get(url_base + 'todos?userId={}'.format(sys.argv[1]))
+    tasks = requests.get('{}todos?userId={}'.format(url_base, sys.argv[1]))
     list_tasks = tasks.json()
 
     num_done = 0
