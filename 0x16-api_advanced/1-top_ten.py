@@ -8,10 +8,10 @@ import requests
 
 def top_ten(subreddit):
     """Prints titles of first 10 hot posts of a given subreddit"""
-    url = 'https://reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
+    url = 'https://api.reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
     headers = {'user-agent': 'linux:api_advanced:v1.2 (by /u/miguel-dev)'}
-    r = requests.get(url, headers=headers)
-    if not (r.status_code == requests.codes.ok):
+    r = requests.get(url, headers=headers, allow_redirects=False)
+    if (r.status_code != requests.codes.ok):
         print('None')
     else:
         dict_hot = r.json()
