@@ -12,7 +12,7 @@ def top_ten(subreddit):
     headers = {'user-agent': 'linux:api_advanced:v1.2 (by /u/miguel-dev)'}
     r = requests.get(url, headers=headers)
     if not (r.status_code == requests.codes.ok):
-        return 0
+        print('None')
     else:
         dict_hot = r.json()
         hot_posts = dict_hot.get("data").get('children')
