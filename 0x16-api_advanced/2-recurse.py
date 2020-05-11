@@ -11,10 +11,13 @@ def recurse(subreddit, hot_list=[], after=''):
     url = 'https://api.reddit.com/r/{}/hot'.format(subreddit)
     headers = {'user-agent': 'Miguel'}
     params = {'after': after}
-    r = requests.get(url, headers=headers, params=params, allow_redirects=False)
+    r = requests.get(url,
+                     headers=headers,
+                     params=params,
+                     allow_redirects=False)
     if (r.status_code != requests.codes.ok):
-        return('None')
-    else: 
+        return None
+    else:
         dict_hot = r.json()
         hot_posts = dict_hot.get("data").get('children')
         if len(hot_posts) > 0:
